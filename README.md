@@ -1,46 +1,57 @@
-# Poder
+# Poder — Desktop App
+
+![Poder Banner](sourcecode/resources/banner.png)
 
 Advanced Facebook data extraction tool with a modern PyQt5 interface.  
 Built with Python, powered by Selenium.
 
-## 📦 Download
+## 🔧 Setup
 
-| Package | Description |
-|---|---|
-| [`setup.exe`](https://poder.paoloothedev.com/resources/setup.exe) | Windows installer (64-bit) |
-| [`cookies_maker.py`](https://poder.paoloothedev.com/cookies_maker.py) | Generate Facebook session cookies |
+```bash
+git clone https://github.com/lordpaoloo/Poder.git
+cd Poder/sourcecode
+pip install -r requirements.txt
+python Ui.py
+```
 
-### Cookie Setup
+## 🍪 Cookie Generation
 
-Poder needs Facebook session cookies to work. Use the `cookies_maker.py` script:
+Poder needs Facebook session cookies to work. Generate them with `cookies_maker.py`:
 
-1. Install Python 3
-2. `pip install selenium`
-3. Download ChromeDriver matching your Chrome version
-4. Run `python cookies_maker.py`
-5. Log into Facebook in the browser that opens
-6. Press Enter — cookies saved to `cookies.pkl`
+```bash
+cd Poder/sourcecode
+pip install selenium
+python cookies_maker.py
+```
+
+1. A Chrome window opens to Facebook
+2. Log into your account
+3. Press **Enter** in the terminal
+4. Cookies are saved to `cookies.pkl` in the current directory
+
+Place the generated `cookies.pkl` file in the `sourcecode/` folder before running Poder.
 
 ## 🚀 Features
 
 - **Facebook Search** — Search by name or hashtag with enhanced precision
 - **Multi-threaded Scraping** — Faster data collection with parallel processing
-- **Progress Tracking** — Detailed logs and real-time progress indicators
-- **Modern UI** — Sleek PyQt5 interface designed for optimal UX
 - **Auto-Scraping Mode** — Continuous data extraction without manual intervention
+- **Progress Tracking** — Detailed logs and real-time progress indicators
 - **Data Storage** — Save scraped data in structured format
+- **Modern UI** — Sleek PyQt5 interface designed for optimal UX
+
+## 📥 Download
+
+Download the Windows installer from the [website](https://poder.paoloothedev.com).
+
+## 🌐 Website
+
+Visit the landing page: [poder.paoloothedev.com](https://poder.paoloothedev.com)
 
 ## 🤝 Contributing
 
-Contributions are welcome! Open issues, suggest features, or submit pull requests.
+Contributions welcome! Open an [issue](https://github.com/lordpaoloo/Poder/issues) or reach out on Discord: **lordpaolo**
 
-- Open an [issue](https://github.com/lordpaoloo/Poder/issues)
-- Reach out on Discord: **lordpaolo**
+## 📄 License
 
-## 📜 License
-
-This project is licensed under the MIT License — see [LICENSE](sourcecode/LICENSE).
-
----
-
-> **Looking for the source code?** See [`sourcecode/README.md`](sourcecode/README.md) for development setup and usage.
+MIT License — see [LICENSE](sourcecode/LICENSE).
