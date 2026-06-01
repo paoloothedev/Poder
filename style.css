@@ -1,0 +1,314 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: white;
+  color: black;
+  line-height: 1.6;
+}
+
+/* Spider web animation */
+.spider-web-container {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  overflow: hidden;
+}
+
+.spider-web {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 100% 100%, transparent 0, transparent 3px, rgba(0,0,0,0.1) 3px),
+    radial-gradient(circle at 0% 100%, transparent 0, transparent 3px, rgba(0,0,0,0.1) 3px),
+    radial-gradient(circle at 100% 0%, transparent 0, transparent 3px, rgba(0,0,0,0.1) 3px),
+    radial-gradient(circle at 0% 0%, transparent 0, transparent 3px, rgba(0,0,0,0.1) 3px);
+  background-size: 50px 50px;
+  background-position: 0 0;
+  animation: moveWeb 30s linear infinite;
+}
+
+.spider-web::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 48%, rgba(0,0,0,0.1) 50%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(0,0,0,0.1) 50%, transparent 52%);
+  background-size: 50px 50px;
+  animation: moveWebLines 40s linear infinite;
+}
+
+@keyframes moveWeb {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes moveWebLines {
+  from { background-position: 0 0; }
+  to { background-position: 50px 50px; }
+}
+
+/* Glow effect for download button */
+.glow-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, transparent 70%);
+  animation: glow 3s infinite;
+}
+
+@keyframes glow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Layout */
+.content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+nav h1 {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #6b7280;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 5rem 0;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.beta-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.hero h2 {
+  font-size: 3.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text {
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-bottom: 3rem;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: black;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primary-button:hover {
+  background: #374151;
+}
+
+.secondary-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: black;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.secondary-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Features section */
+.features, .why-poder {
+  padding: 8rem 0;
+}
+
+.features h3, .why-poder h3 {
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card, .benefit-card {
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 0.75rem;
+}
+
+.feature-card i, .benefit-card i {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h4, .benefit-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p, .benefit-card p {
+  color: #4b5563;
+}
+
+/* Benefits section */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+/* Download section */
+.download-section {
+  padding: 8rem 0;
+  text-align: center;
+}
+
+.download-card {
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.download-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.download-card p {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.download-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.download-options .primary-button {
+  min-width: 200px;
+}
+
+/* Footer */
+footer {
+  padding: 8rem 0 2rem;
+  text-align: center;
+}
+
+.footer-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4b5563;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+
+  .download-options {
+    flex-direction: column;
+  }
+}
+
+/* Icons */
+[data-lucide] {
+  width: 20px;
+  height: 20px;
+}

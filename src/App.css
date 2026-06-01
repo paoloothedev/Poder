@@ -1,0 +1,375 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: white;
+  color: black;
+  line-height: 1.6;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  background: white;
+  color: black;
+}
+
+/* Spider web animation */
+.spider-web-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+canvas {
+  display: block;
+}
+
+/* Layout */
+.content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+nav h1 {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #6b7280;
+}
+
+.repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 5rem 0;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.beta-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.hero h2 {
+  font-size: 3.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text {
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-bottom: 3rem;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: black;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.primary-button:hover {
+  background: #374151;
+}
+
+.secondary-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: black;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.secondary-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Glow effect for download button */
+.glow-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, transparent 70%);
+  animation: glow 3s infinite;
+}
+
+@keyframes glow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Features section */
+.features, .why-poder {
+  padding: 8rem 0;
+}
+
+.features h3, .why-poder h3 {
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card, .benefit-card {
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 0.75rem;
+}
+
+.feature-card svg, .benefit-card svg {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h4, .benefit-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p, .benefit-card p {
+  color: #4b5563;
+}
+
+/* Benefits section */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+/* Download section */
+.download-section {
+  padding: 8rem 0;
+  text-align: center;
+}
+
+.download-card {
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.download-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.download-card p {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.download-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.download-options .primary-button {
+  min-width: 200px;
+}
+
+/* Cookie Maker section */
+.cookie-section {
+  padding: 8rem 0;
+  text-align: center;
+}
+
+.cookie-section h3 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.cookie-desc {
+  color: #4b5563;
+  max-width: 42rem;
+  margin: 0 auto 3rem;
+}
+
+.cookie-download {
+  margin-bottom: 3rem;
+}
+
+.steps {
+  max-width: 36rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: black;
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: #4b5563;
+}
+
+.step span {
+  font-size: 0.9375rem;
+  color: #374151;
+}
+
+/* Footer */
+footer {
+  padding: 8rem 0 2rem;
+  text-align: center;
+}
+
+.footer-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: #4b5563;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.social-links a:hover {
+  color: black;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .download-options {
+    flex-direction: column;
+  }
+}
