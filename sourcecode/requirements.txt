@@ -1,0 +1,6 @@
+PyQt5>=5.15
+selenium>=4.15
+beautifulsoup4>=4.12
+pandas>=2.0
+openpyxl>=3.1
+lxml>=5.0

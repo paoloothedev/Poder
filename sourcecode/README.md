@@ -1,43 +1,57 @@
-# **Poder**
+# Poder — Desktop App
 
 ![Poder Banner](resources/banner.png)
 
-## 🚀 Beta Version - v1.0
+Advanced Facebook data extraction tool with a modern PyQt5 interface.  
+Built with Python, powered by Selenium.
 
-The **Beta Version** of **Poder** will be released on **31-01-2025**. Get ready to experience an upgraded data extraction tool like never before!
+## 🔧 Setup
 
-## 📌 What's New
-- **Facebook Page & Hashtag Search**: Now you can search by name or hashtag on Facebook with ease.
-- **Multi-threaded Scraping**: Enhanced performance with faster data collection.
-- **Improved Logging & Progress Tracking**: Stay informed with detailed logs and progress indicators.
-- **Sleek UI Update**: Enjoy a modern, intuitive PyQt5 interface designed for better user experience.
+```bash
+git clone https://github.com/lordpaoloo/Poder.git
+cd Poder/sourcecode
+pip install -r requirements.txt
+python Ui.py
+```
 
-## 🔥 Key Features
-- **Advanced Search**: Search Facebook by name or hashtag for targeted data extraction.
-- **Auto-Scraping Mode**: Continuous data extraction without manual intervention.
-- **Data Storage**: Save the scraped data in a structured format for later use.
-- **Real-Time Logs**: Track your progress and spot any errors in real-time.
-- **User-Friendly Interface**: Designed with simplicity in mind, powered by PyQt5.
+## 🍪 Cookie Generation
 
-## 💡 Why Choose Poder?
-- **Automate Your Data Collection**: Streamline your research with automated scraping, saving both time and effort.
-- **Instant Insights**: Access real-time analytics directly from your collected data.
-- **Intuitive Interface**: Perfect for both beginners and experienced users alike.
-- **Security & Reliability**: Trust that your data will be handled securely and reliably.
+Poder needs Facebook session cookies to work. Generate them with `cookies_maker.py`:
 
-## 📣 Contribute
-We're always looking for help! You can **open issues**, suggest features, or **submit pull requests** to make Poder even better.
+```bash
+cd Poder/sourcecode
+pip install selenium
+python cookies_maker.py
+```
 
-## 📥 Download the Beta Version
-Ready to dive in? Download the **Beta Version** from our [Releases Page](https://github.com/lordpaoloo/Poder/releases).
+1. A Chrome window opens to Facebook
+2. Log into your account
+3. Press **Enter** in the terminal
+4. Cookies are saved to `cookies.pkl` in the current directory
 
-## 🌟 Join the Journey
-Building this project is an ambitious task, but it's an exciting one! If you're interested in contributing or collaborating, **reach out to me on Discord**.
+Place the generated `cookies.pkl` file in the `sourcecode/` folder before running Poder.
 
-👉 **Discord**: lordpaolo
+## 🚀 Features
+
+- **Facebook Search** — Search by name or hashtag with enhanced precision
+- **Multi-threaded Scraping** — Faster data collection with parallel processing
+- **Auto-Scraping Mode** — Continuous data extraction without manual intervention
+- **Progress Tracking** — Detailed logs and real-time progress indicators
+- **Data Storage** — Save scraped data in structured format
+- **Modern UI** — Sleek PyQt5 interface designed for optimal UX
+
+## 📥 Download
+
+Download the Windows installer from the [website](https://poder.paoloothedev.com).
 
 ## 🌐 Website
-Visit our website for more information: [Poder Website](https://lordpaoloo.github.io/Poder/index.html)
 
-## 📜 License
-Poder is open-source and licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+Visit the landing page: [poder.paoloothedev.com](https://poder.paoloothedev.com)
+
+## 🤝 Contributing
+
+Contributions welcome! Open an [issue](https://github.com/lordpaoloo/Poder/issues) or reach out on Discord: **lordpaolo**
+
+## 📄 License
+
+MIT License — see [LICENSE](../sourcecode/LICENSE).
